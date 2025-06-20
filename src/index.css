@@ -1,0 +1,20 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f7f7f7;
+}
+.App h1, .App h2 {
+  color: #222;
+}
+.drink-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #fff;
+}
+.cart {
+  margin-top: 2rem;
+}
+.cart button {
+  margin: 0 0.25rem;
+}
