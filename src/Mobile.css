@@ -1,0 +1,543 @@
+/* === GENERAL STYLES === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.App {
+  padding-bottom: 100px;
+  background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: #ffd700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #ffd70055;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.app-logo {
+  width: 32px;
+  height: 32px;
+}
+
+/* === CATEGORY BUTTONS === */
+.category-buttons-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 0.5rem 0.75rem;
+  background: #111;
+  position: sticky;
+  top: 56px;
+  z-index: 25;
+  border-bottom: 1px solid #333;
+  width: 100%;
+}
+
+.category-buttons-container::-webkit-scrollbar {
+  display: none;
+}
+
+.category-button {
+  margin-right: 0.5rem;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  background: #222;
+  border: 1px solid #ffd700;
+  color: #ffd700;
+  border-radius: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+.category-button:hover,
+.category-button:focus {
+  background-color: #333;
+  outline: none;
+}
+
+.category-button.active {
+  background-color: #ffd700;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 6px #ffd70088;
+}
+
+/* === DRINK GRID === */
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.drink-card {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 0.75rem;
+  color: #ffd700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px #00000055;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.drink-card:hover,
+.drink-card:focus {
+  box-shadow: 0 4px 16px #ffd70088;
+  transform: scale(1.02);
+  outline: none;
+  background-color: #222;
+}
+
+.drink-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  pointer-events: none;
+}
+
+.drink-card h3 {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  color: #ffd700;
+}
+
+.drink-card p {
+  font-size: 0.75rem;
+  margin: 0.2rem 0;
+  line-height: 1.3;
+  color: #ccc;
+}
+
+.drink-card button {
+  margin-top: auto;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  background-color: #ffd700;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.drink-card button:hover,
+.drink-card button:focus {
+  background-color: #e5c100;
+  outline: none;
+}
+
+/* === CART === */
+.cart-list {
+  list-style: none;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #111;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 0 5px #00000033;
+}
+
+.cart-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 0.75rem;
+  pointer-events: none;
+}
+
+.cart-details {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #ffd700;
+}
+
+.cart-buttons button {
+  margin-right: 25px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: #ffd700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cart-buttons button:hover,
+.cart-buttons button:focus {
+  background-color: #555;
+  outline: none;
+}
+.add-btn {
+  transition: all 0.2s ease;
+  transform: scale(1);
+}
+
+.add-btn.added {
+  background-color: #00cc66;
+  color: #fff;
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+/* === CHECKOUT BAR === */
+.bottom-bar {
+  position: fixed;
+  bottom: 56px;
+  width: 100%;
+  padding: 0.75rem;
+  background: #111;
+  box-shadow: 0 -2px 10px #00000088;
+  text-align: center;
+  z-index: 20;
+}
+
+.bottom-bar button {
+  background-color: #ffd700;
+  color: #000;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bottom-bar button:hover,
+.bottom-bar button:focus {
+  background-color: #e5c100;
+  outline: none;
+}
+
+/* === ADMIN PANEL === */
+.admin-panel {
+  padding: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  color: #ffd700;
+}
+
+.admin-orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.admin-orders-table th,
+.admin-orders-table td {
+  border: 1px solid #444;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.admin-orders-table th {
+  background-color: #222;
+  color: #ffd700;
+}
+
+.admin-orders-table td {
+  background-color: #111;
+  color: #fff;
+}
+.admin-panel > div {
+  border-bottom: 3px solid #666; /* lighter and thicker */
+  margin-bottom: 1.5rem;         /* add spacing below */
+  padding-bottom: 1rem;          /* padding so content doesn’t stick to border */
+}
+
+/* === TAB NAVIGATION === */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background: #111;
+  border-top: 1px solid #333;
+  padding: 0.5rem 0;
+  z-index: 100;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: #ffd700;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.bottom-nav button.active,
+.bottom-nav button:hover,
+.bottom-nav button:focus {
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 2px solid #ffd700;
+  outline: none;
+}
+
+.bottom-nav .cart-badge {
+  background: red;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+/* === ADMIN LOGIN === */
+.admin-login {
+  padding: 2rem;
+  background: #111;
+  border: 1px solid #444;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.admin-login input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+
+.admin-login button {
+  background-color: #ffd700;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-login button:hover,
+.admin-login button:focus {
+  background-color: #e5c100;
+  outline: none;
+}
+/* Admin panel container */
+.admin-panel {
+  background-color: #111;
+  color: #eee;
+  border-radius: 10px;
+}
+
+/* Admin buttons */
+.admin-panel button {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.admin-panel button:hover {
+  background-color: #333;
+}
+
+/* Search input */
+.admin-panel input[type="text"],
+.admin-panel input[type="password"] {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+/* Admin QR image */
+.admin-panel img {
+  border: 2px solid #555;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Table layout */
+.admin-panel table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 14px;
+}
+
+.admin-panel th,
+.admin-panel td {
+  border-bottom: 1px solid #444;
+  padding: 10px;
+  text-align: left;
+}
+
+.admin-panel thead {
+  background-color: #222;
+  color: #ffd700;
+}
+
+.admin-panel tbody tr:nth-child(even) {
+  background-color: #181818;
+}
+
+.admin-panel tbody tr:nth-child(odd) {
+  background-color: #131313;
+}
+
+.admin-panel tfoot td {
+  background-color: #000;
+  font-weight: bold;
+}
+
+/* Section divider */
+.admin-panel hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 1.5rem 0;
+}
+/* === PAYMENT MODAL === */
+.payment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.payment-modal-content {
+  background-color: #111;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.payment-title {
+  color: #ffd700;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.payment-instruction {
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.payment-qr {
+  max-width: 220px;
+  margin: 0 auto 20px auto;
+  display: block;
+  border-radius: 10px;
+  border: 2px solid #444;
+}
+
+/* === PAYMENT BUTTONS === */
+.payment-confirm-btn,
+.payment-cancel-btn,
+.checkout-submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-confirm-btn {
+  background-color: #10b981; /* green */
+  color: #fff;
+}
+
+.payment-confirm-btn:hover {
+  background-color: #0f766e;
+}
+
+.payment-cancel-btn {
+  background-color: #ef4444; /* red */
+  color: #fff;
+}
+
+.payment-cancel-btn:hover {
+  background-color: #b91c1c;
+}
+
+.checkout-submit-btn {
+  background-color: #ffd700;
+  color: #000;
+}
+
+.checkout-submit-btn:hover {
+  background-color: #e5c100;
+}
+
+/* === TABLE NUMBER SELECT === */
+.table-select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 1px solid #666;
+  background-color: #222;
+  color: #ffd700;
+  font-size: 1rem;
+}
+
+.table-select option {
+  background-color: #111;
+  color: #ffd700;
+}
