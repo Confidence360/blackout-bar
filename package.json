@@ -12,13 +12,14 @@
     "react-dom": "^18.0.0",
     "react-icons": "^5.5.0",
     "react-qr-scanner": "^1.0.0-alpha.11",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "5.0.1",
     "react-swipeable": "^7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "dev": "react-scripts start"
+    "dev": "react-scripts start",
+    "postinstall": "node -e \"if (process.platform === 'linux') require('child_process').execSync('chmod +x node_modules/.bin/react-scripts')\""
   },
   "browserslist": {
     "production": [

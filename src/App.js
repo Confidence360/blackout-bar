@@ -1296,11 +1296,6 @@ const exportToPDF = () => {
   </div>
 )}
 
-
-
-
-
-
       {/* Navigation bottom tab */}
       <nav className="bottom-nav">
         <button
