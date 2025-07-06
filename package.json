@@ -15,13 +15,12 @@
     "react-scripts": "^5.0.1",
     "react-swipeable": "^7.0.2"
   },
-"scripts": {
-  "start": "react-scripts start",
-  "build": "node node_modules/react-scripts/bin/react-scripts.js build",
-  "dev": "react-scripts start",
-  "postinstall": "node -e \"try{require('fs').chmodSync('node_modules/.bin/react-scripts', 0o755)}catch(e){}\""
-},
-
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "node node_modules/react-scripts/scripts/build.js",
+    "dev": "react-scripts start",
+    "postinstall": "node -e \"if (process.platform === 'linux') require('child_process').execSync('chmod +x node_modules/.bin/react-scripts')\""
+  },
   "browserslist": {
     "production": [
       ">0.2%",
